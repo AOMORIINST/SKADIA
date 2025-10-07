@@ -1,0 +1,272 @@
+/* =============================
+   SKADIA — styles.css (white + pink/lilac)
+   ============================= */
+:root{
+  --bg: #ffffff;
+  --bg-soft: #fafbff;
+  --text: #21222c;
+  --muted: #707189;
+  --border: rgba(10,12,18,.08);
+
+  --pink: #f59abb;     /* toque rosa */
+  --lilac: #bca9ff;    /* toque lila */
+  --accent: #e77fb3;   /* acento más intenso */
+  --accent-2: #8f7bff; /* lila intenso */
+
+  --shadow-sm: 0 4px 14px rgba(20,20,20,.06);
+  --shadow-md: 0 10px 30px rgba(20,20,20,.10);
+  --radius: 16px;
+}
+
+*{ box-sizing:border-box }
+html,body{
+  margin:0; padding:0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background: var(--bg);
+  scroll-behavior:smooth;
+}
+
+/* -------- layout helpers -------- */
+.wrap{ max-width: 1160px; margin: 0 auto; padding: 0 22px; }
+
+/* -------- header -------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.85);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.site-header .wrap{
+  height:72px; display:flex; align-items:center; justify-content:space-between;
+}
+.brand{
+  font-weight: 800; font-size: 20px; letter-spacing: .08em;
+  background: linear-gradient(90deg, var(--pink), var(--lilac));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  transition: transform .25s ease;
+}
+.brand:hover{ transform: scale(1.03) }
+nav a{
+  margin-left: 18px; text-decoration:none; color:#3a3c4f; font-weight:600; position:relative;
+  transition: color .2s ease;
+}
+nav a::after{
+  content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px;
+  background: linear-gradient(90deg, var(--pink), var(--lilac));
+  transition: width .25s ease;
+}
+nav a:hover{ color:#111325 }
+nav a:hover::after{ width:100% }
+
+/* -------- hero -------- */
+.hero{
+  padding: 96px 0 72px;
+  background:
+    radial-gradient(800px 400px at 15% 20%, rgba(245,154,187,.18), transparent 60%),
+    radial-gradient(800px 400px at 85% 30%, rgba(188,169,255,.18), transparent 60%);
+}
+.hero-grid{ display:grid; gap:34px; grid-template-columns: 1.1fr .9fr; align-items:center; }
+.hero h1{
+  font-size: clamp(36px, 5vw, 60px); line-height:1.08; margin:0 0 12px;
+}
+.highlight{
+  background: linear-gradient(90deg, var(--pink), var(--lilac)); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero p{ color: var(--muted); font-size: 1.08rem; max-width: 58ch }
+.cta-row{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap }
+
+/* -------- buttons -------- */
+.btn{
+  border:2px solid transparent; padding:12px 18px; border-radius: 12px;
+  text-decoration:none; display:inline-block; font-weight:700; cursor:pointer;
+  transition: transform .18s ease, box-shadow .22s ease, filter .2s ease, background .25s ease, border-color .25s ease, color .25s ease;
+}
+.btn-cta{
+  background: linear-gradient(90deg, var(--pink), var(--lilac)); color:#fff;
+  box-shadow: 0 10px 24px rgba(231,127,179,.25);
+}
+.btn-outline{
+  border-color: var(--pink); color:#222; background:#fff;
+}
+.btn.big{ padding:16px 22px; font-size:1.05rem }
+.btn:hover{ transform: translateY(-2px); filter: brightness(1.03); box-shadow: var(--shadow-md) }
+.btn-ir-nosotros {
+  background: linear-gradient(90deg, #ff6fb1, #c26ef5);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-ir-nosotros:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(194, 110, 245, 0.3);
+}
+
+
+/* -------- cards / sections -------- */
+.card{
+  background:#fff; border:1px solid var(--border); border-radius: var(--radius); padding:22px;
+  box-shadow: var(--shadow-sm); transition: transform .22s ease, box-shadow .22s ease;
+}
+.card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-md) }
+
+section{ scroll-margin-top: 90px; }
+.services, .process, .pricing, .testimonials, .contact{ padding:72px 0 }
+.services h2, .process h2, .pricing h2, .testimonials h2, .contact h2{
+  font-size: 2.1rem; margin:0 0 12px; text-align:center;
+}
+.section-head p, .services > .wrap > p{ color: var(--muted); text-align:center; margin:0 0 24px }
+
+/* grid reusable */
+.cards{
+  display:grid; gap:18px; grid-template-columns: repeat(3, 1fr);
+}
+
+/* services */
+#servicios .card h3{ margin:0 0 6px }
+#servicios .card p{ color: var(--muted) }
+
+/* process */
+.process ol.cards{ list-style:none; counter-reset: step; padding:0; }
+.process ol.cards > li{ position:relative; padding-left:56px }
+.process ol.cards > li::before{
+  counter-increment: step; content: counter(step);
+  position:absolute; left:16px; top:22px;
+  width:28px; height:28px; border-radius:50%;
+  color:#fff; font-weight:800; font-size:.9rem; display:grid; place-items:center;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 16px rgba(140,120,255,.3);
+}
+
+/* pricing */
+.pricing .card ul{ margin:10px 0 18px; padding-left:18px; color:var(--muted) }
+.pricing .card h3{ margin:0 0 6px }
+.pricing .card p{ color: var(--muted) }
+.pricing .card:nth-child(2){ /* destacar plan medio */
+  border-color: rgba(143,123,255,.3);
+  box-shadow: 0 14px 36px rgba(143,123,255,.18);
+}
+
+/* testimonials */
+.testimonials blockquote{ margin:0 }
+.testimonials blockquote p{ font-size:1.05rem; margin:0 0 8px }
+.testimonials cite{ color: var(--muted); font-style: normal }
+
+/* contact */
+.contact{
+  background:
+    linear-gradient(180deg, rgba(245,154,187,.08), rgba(188,169,255,.10) 60%, transparent);
+}
+.contact .hint{ color: var(--muted) }
+
+/* footer */
+.site-footer{
+  border-top:1px solid var(--border); background: var(--bg-soft);
+  color: var(--muted); padding: 26px 0; text-align:center; font-size:.95rem;
+}
+.site-footer a{ color: var(--accent); text-decoration:none }
+.site-footer a:hover{ text-decoration:underline }
+
+/* ===== SECCIÓN NOSOTROS – SKADIA ===== */
+
+.nosotros {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.nosotros .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nosotros .titulo {
+  font-size: 2.5em;
+  color: #c26ef5; /* Lila */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.nosotros .titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff6fb1; /* Rosa */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.nosotros .intro {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.nosotros .intro span {
+  color: #ff6fb1;
+  font-weight: 600;
+}
+
+.nosotros .bloques {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.nosotros .bloque {
+  background: #faf6ff; /* Suave fondo lila */
+  border: 1px solid #f1e0ff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nosotros .bloque:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(194, 110, 245, 0.15);
+}
+
+.nosotros .bloque h3 {
+  color: #000000; /* Rosa */
+  margin-bottom: 15px;
+}
+
+.nosotros .bloque p,
+.nosotros .bloque ul {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.nosotros .bloque ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nosotros .bloque li {
+  margin-bottom: 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nosotros .bloques {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nosotros .bloque {
+    width: 90%;
+  }
+}
+
