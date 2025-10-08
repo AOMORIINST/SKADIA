@@ -1,19 +1,41 @@
+// Año dinámico en el footer
+document.getElementById('year').textContent = new Date().getFullYear();
 
-/* -------- reveal on scroll (con script.js) -------- */
-.reveal{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease }
-.revealed{ opacity:1; transform: translateY(0) }
-.delay-1{ transition-delay: .12s }
-.delay-2{ transition-delay: .24s }
+// Mobile nav toggle
+const toggle = document.querySelector('.nav__toggle');
+const menu = document.querySelector('.nav__menu');
+toggle?.addEventListener('click', () => {
+  const open = menu.classList.toggle('is-open');
+  toggle.setAttribute('aria-expanded', String(open));
+});
 
-/* -------- responsive -------- */
-@media (max-width: 980px){
-  .hero-grid{ grid-template-columns: 1fr }
-  .cards{ grid-template-columns: 1fr 1fr }
-}
-@media (max-width: 680px){
-  nav a{ margin-left: 12px }
-  .cards{ grid-template-columns: 1fr }
-  .site-header .wrap{ height:68px }
-  .brand{ font-size:18px }
-  .btn.big{ width:100%; text-align:center }
-}
+// Cerrar menú al hacer click en un link (mobile)
+menu?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => menu.classList.remove('is-open'));
+});
+
+// Animación reveal con IntersectionObserver
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+revealEls.forEach(el => io.observe(el));
+
+// Scroll suave para anclas internas
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if(href && href.length > 1){
+      e.preventDefault();
+      const to = document.querySelector(href);
+      to?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', href);
+    }
+  });
+});

@@ -3,215 +3,195 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="skadia.png">
-  <title>SKADIA — Landings que convierten</title>
-  <meta name="description" content="SKADIA diseña y desarrolla landings rápidas, efectivas y medibles para marcas y emprendedores." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="skadia.png" sizes="32x32" />
+  <title>SKADI — Landingpages que convierten</title>
+  <meta name="description" content="SKADI: diseñamos y desarrollamos landing pages de alto rendimiento. UX enfocada en conversión, velocidad y SEO on-page." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <!-- Decor blobs -->
+  <div class="blob blob--one" aria-hidden="true"></div>
+  <div class="blob blob--two" aria-hidden="true"></div>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="#home">SKADIA</a>
-      <nav>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#planes">Planes</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto" class="btn btn-cta">Contrátanos</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="SKADI inicio">
+        <span class="brand__logo">⟡</span>
+        <span class="brand__name">SKADI</span>
+        <span class="brand__tag">.dev</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" role="navigation">
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#proceso" class="nav__link">Proceso</a>
+        <a href="#nosotros" class="nav__link">Nosotros</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a class="btn btn--primary" href="https://www.fiverr.com/s/tu-perfil" target="_blank" rel="noopener">Contactar en Fiverr</a>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section id="home" class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-text reveal">
-        <h1>Landings <span class="highlight">rápidas</span> que venden más.</h1>
-        <p>Diseñamos y desarrollamos páginas de aterrizaje optimizadas para campañas digitales y resultados reales.</p>
-        <div class="cta-row">
-         <a href="#nosotros" class="btn-ir-nosotros">Nosotros</a>
-          <a class="btn btn-outline" href="https://www.fiverr.com/categories/programming-tech/website-development" target="_blank">Fiverr</a>
-        </div>
-      </div>
-
-      <aside class="hero-card reveal delay-1">
-        <div class="card">
-          <h3>Qué incluye</h3>
-          <ul>
-            <li>Diseño UX/UI personalizado</li>
-            <li>Core Web Vitals en verde</li>
-            <li>Integración con analítica y píxeles</li>
-            <li>Hosting optimizado o el tuyo</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ===== SERVICIOS ===== -->
-  <section id="servicios" class="services">
-    <div class="wrap">
-      <h2 class="reveal">Servicios</h2>
-      <div class="cards">
-        <article class="card reveal">
-          <h3>Landing de campaña</h3>
-          <p>Una página enfocada 100% en la conversión y los anuncios.</p>
-        </article>
-        <article class="card reveal delay-1">
-          <h3>Mini-sitio</h3>
-          <p>Hasta 4 secciones con navegación fluida y storytelling visual.</p>
-        </article>
-        <article class="card reveal delay-2">
-          <h3>Optimización</h3>
-          <p>Analizamos, medimos y mejoramos tus landings actuales.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-   <section id="nosotros" class="nosotros">
-  <div class="container">
-    <h2 class="titulo">Nosotros</h2>
-    <p class="intro">
-      En <span>SKADIA</span>, creemos que cada idea merece una presencia digital que la impulse. 
-      Somos una <strong>startup creativa</strong> especializada en el diseño y desarrollo de 
-      <strong>landing pages de alto impacto</strong>, pensadas para convertir visitantes en resultados.
-    </p>
-
-    <div class="bloques">
-      <div class="bloque">
-        <h3>Misión</h3>
-        <p>
-          Ayudar a emprendedores, marcas y negocios a <strong>conectar con su público</strong> a través de 
-          páginas diseñadas con estrategia, estética y tecnología.
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero container reveal">
+      <div class="hero__content">
+        <h1>
+          Landing pages <span class="gradient">que convierten</span>
+        </h1>
+        <p class="lead">
+          En <strong>SKADI</strong> diseñamos y programamos <em>solo</em> landing pages. Rápidas, enfocadas en objetivos y listas para vender.
         </p>
-      </div>
-
-      <div class="bloque">
-        <h3>Visión</h3>
-        <p>
-          Ser el aliado digital que transforma ideas en experiencias memorables, combinando 
-          <strong>diseño inteligente, velocidad y conversión</strong>.
-        </p>
-      </div>
-
-      <div class="bloque">
-        <h3>Enfoque</h3>
-        <ul>
-          <li><strong>Estrategia primero:</strong> cada proyecto nace con un objetivo claro.</li>
-          <li><strong>Diseño que inspira:</strong> experiencias visuales únicas y coherentes.</li>
-          <li><strong>Optimización constante:</strong> medimos, mejoramos y escalamos.</li>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="https://www.fiverr.com/s/tu-perfil" target="_blank" rel="noopener">Reserva tu landing</a>
+          <a class="btn btn--ghost btn--lg" href="#portfolio">Ver trabajos</a>
+        </div>
+        <ul class="hero__badges">
+          <li>⚡ Carga ultra-rápida</li>
+          <li>📈 Pensadas para conversión</li>
+          <li>🔍 SEO on-page</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="hero__card" aria-label="Muestra de KPI de una landing">
+        <div class="kpi">
+          <span class="kpi__label">Tasa de Conversión</span>
+          <span class="kpi__value">+27%</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi__label">Tiempo de carga</span>
+          <span class="kpi__value">0.9s</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi__label">PageSpeed</span>
+          <span class="kpi__value">98/100</span>
+        </div>
+      </div>
+    </section>
 
+    <!-- Servicios -->
+    <section id="servicios" class="section container reveal">
+      <header class="section__header">
+        <h2>Nuestros servicios</h2>
+        <p>Especialistas en una sola cosa: <strong>landing pages</strong> de alto rendimiento.</p>
+      </header>
+      <div class="grid cards">
+        <article class="card">
+          <h3>Diseño + UX</h3>
+          <p>Arquitectura de información, wireframes y diseño visual con foco 100% en conversión.</p>
+          <ul class="checklist">
+            <li>Estructuras probadas (AIDA/PAS)</li>
+            <li>Secciones hero y prueba social</li>
+            <li>CTA’s estratégicos</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Desarrollo</h3>
+          <p>HTML, CSS y JS limpios. Animaciones fluidas y buenas prácticas de accesibilidad.</p>
+          <ul class="checklist">
+            <li>Responsive completo</li>
+            <li>Optimización de assets</li>
+            <li>Integraciones (Analytics, Pixel)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Performance</h3>
+          <p>Medimos y optimizamos: velocidad, SEO on-page y métricas core web vitals.</p>
+          <ul class="checklist">
+            <li>Lazy loading</li>
+            <li>Metadatos y OG tags</li>
+            <li>Pruebas A/B opcionales</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-  <!-- ===== PROCESO ===== -->
-  <section id="proceso" class="process">
-    <div class="wrap">
-      <h2 class="reveal">Nuestro proceso</h2>
-      <ol class="cards">
-        <li class="card reveal"><strong>1. Brief</strong><br>Conocemos tus objetivos y público.</li>
-        <li class="card reveal delay-1"><strong>2. Diseño</strong><br>Propuesta visual, copy y estructura.</li>
-        <li class="card reveal delay-2"><strong>3. Desarrollo</strong><br>HTML, CSS, JS y pruebas de rendimiento.</li>
-        <li class="card reveal delay-2"><strong>4. Lanzamiento</strong><br>Publicación, medición y soporte.</li>
+    <!-- Proceso -->
+    <section id="proceso" class="section container reveal">
+      <header class="section__header">
+        <h2>Cómo trabajamos</h2>
+        <p>Proceso simple, entregas rápidas.</p>
+      </header>
+      <ol class="steps">
+        <li>
+          <span class="step__num">1</span>
+          Brief & objetivos
+        </li>
+        <li>
+          <span class="step__num">2</span>
+          Wireframe + copy
+        </li>
+        <li>
+          <span class="step__num">3</span>
+          Diseño visual
+        </li>
+        <li>
+          <span class="step__num">4</span>
+          Desarrollo & QA
+        </li>
+        <li>
+          <span class="step__num">5</span>
+          Lanzamiento 🚀
+        </li>
       </ol>
-    </div>
-  </section>
-
-  <!-- ===== PLANES ===== -->
-  <section id="planes" class="pricing">
-    <div class="wrap">
-      <h2 class="reveal">Planes</h2>
-      <div class="cards">
-        <article class="card reveal">
-          <h3>Starter</h3>
-          <p>Ideal para validar ideas.</p>
-          <ul>
-            <li>Landing simple</li>
-            <li>Entrega 5 días</li>
-          </ul>
-          <a class="btn btn-outline" href="#contacto">Elegir</a>
-        </article>
-        <article class="card reveal delay-1">
-          <h3>Growth</h3>
-          <p>Perfecto para escalar campañas.</p>
-          <ul>
-            <li>Mini-sitio 3 secciones</li>
-            <li>Pruebas A/B</li>
-            <li>Entrega 7 días</li>
-          </ul>
-          <a class="btn btn-outline" href="#contacto">Elegir</a>
-        </article>
-        <article class="card reveal delay-2">
-          <h3>Professional</h3>
-          <p>Para empresas y agencias.</p>
-          <ul>
-            <li>Diseño premium</li>
-            <li>Soporte mensual</li>
-            <li>Optimización continua</li>
-          </ul>
-          <a class="btn btn-outline" href="#contacto">Elegir</a>
-        </article>
+      <div class="cta-center">
+        <a class="btn btn--primary" href="https://www.fiverr.com/s/tu-perfil" target="_blank" rel="noopener">Empezar en Fiverr</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== TESTIMONIOS ===== -->
-  <section id="testimonios" class="testimonials">
-    <div class="wrap">
-      <h2 class="reveal">Testimonios</h2>
-      <div class="cards">
-        <blockquote class="card reveal">
-          <p>“Nuestra landing con SKADIA duplicó el CTR. Profesionales y veloces.”</p>
-          <cite>— Lucas, E-commerce</cite>
-        </blockquote>
-        <blockquote class="card reveal delay-1">
-          <p>“Excelente comunicación y resultados medibles desde el día uno.”</p>
-          <cite>— Martín, SaaS B2B</cite>
-        </blockquote>
-        <blockquote class="card reveal delay-2">
-          <p>“Tiempos de carga increíbles, un 95/100 en Lighthouse.”</p>
-          <cite>— Norma, Agencia Digital</cite>
-        </blockquote>
+    <!-- Nosotros -->
+    <section id="nosotros" class="section container reveal">
+      <header class="section__header">
+        <h2>Nosotros</h2>
+        <p>Somos un equipo boutique dedicado exclusivamente a <strong>landing pages</strong>.</p>
+      </header>
+      <div class="about">
+        <p>
+          En <b>SKADI</b> creemos que una landing clara y rápida vale más que un sitio gigantesco. Por eso
+          nos enfocamos en una sola cosa y la hacemos al máximo nivel: <i>páginas de aterrizaje que convierten</i>.
+        </p>
+        <p>
+          Trabajamos con founders, e-commerce y servicios profesionales que buscan performance real:
+          más leads, más ventas, mejores métricas.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== CONTACTO (redirige a Fiverr) ===== -->
-  <section id="contacto" class="contact">
-    <div class="wrap">
-      <h2 class="reveal">Contacto</h2>
-      <p class="reveal delay-1">Gestionamos los proyectos directamente por Fiverr, para tu seguridad y agilidad.</p>
-      <div class="card contact-card reveal delay-2">
-        <a class="btn btn-cta big"
-           href="https://www.fiverr.com/categories/programming-tech/website-development"
-           target="_blank" rel="noopener">
-          Ir a nuestro perfil en Fiverr
-        </a>
-        <p class="hint">*Se abre en una pestaña nueva.</p>
+    <!-- FAQ -->
+    <section id="faq" class="section container reveal">
+      <header class="section__header">
+        <h2>Preguntas frecuentes</h2>
+        <p>Lo esencial antes de comenzar.</p>
+      </header>
+      <details class="faq">
+        <summary>¿En cuánto tiempo entregan?</summary>
+        <p>Landing estándar: 5–10 días hábiles según complejidad del copy y assets.</p>
+      </details>
+      <details class="faq">
+        <summary>¿Trabajan con plantillas?</summary>
+        <p>Podemos partir de layouts probados, pero cada proyecto se personaliza a tu marca.</p>
+      </details>
+      <details class="faq">
+        <summary>¿Incluye SEO?</summary>
+        <p>Incluimos SEO on-page (metadatos, estructura semántica, performance). Marketing adicional es opcional.</p>
+      </details>
+      <div class="cta-center">
+        <a class="btn btn--ghost" href="https://www.fiverr.com/s/tu-perfil" target="_blank" rel="noopener">Hablemos en Fiverr</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© 2025 SKADIA</span>
-      <a href="https://skadia.dev" target="_blank" rel="noopener">skadia.dev</a>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> SKADI — Solo landing pages.</p>
+      <a href="#home" class="to-top" aria-label="Volver arriba">↑</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
-
-
